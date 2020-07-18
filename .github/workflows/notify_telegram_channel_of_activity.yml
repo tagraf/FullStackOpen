@@ -16,7 +16,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHANNEL }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
+          format: html
           args: | 
             ${{ secrets.TELEGRAM_USER }} {{ github.event }} 
             https://github.com/${{github.repository}}/commit/master
