@@ -18,6 +18,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           args: | 
-            ${{ secrets.TELEGRAM_USER }} made a [ ${{ github.event_name }} ]
+            ${{ secrets.TELEGRAM_USER }} 
             https://github.com/${{github.repository}}/commit/master
                  
