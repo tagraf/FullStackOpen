@@ -17,10 +17,10 @@ jobs:
           to: ${{ secrets.TELEGRAM_CHANNEL }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
-          args: > "
+          args: | 
                   ${{ secrets.TELEGRAM_USER }} 
                   ${{ github.repository }} 
                   ${{ env.CURRENT_COURSE_YEAR }} 
                   ${{github.repository}} 
                   ${{github.event}}   
-                  "
+                 
