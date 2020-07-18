@@ -19,5 +19,6 @@ jobs:
           format: markdown
           args: | 
             ${{ secrets.TELEGRAM_USER }} 
+            ${{ github.event_name }}
             https://github.com/${{github.repository}} 
                  
