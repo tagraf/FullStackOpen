@@ -18,13 +18,9 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           args: | 
-${{ secrets.TELEGRAM_USER }} 
-${{ github.event_name }}
-${{ github.ref }}
-${{ github.action }}
- # ${{ env }} 
- # ${{ job }} 
- # ${{ steps }} 
- # ${{ os }} 
-https://github.com/${{github.repository}} 
+            ${{ secrets.TELEGRAM_USER }} 
+            ${{ github.event_name }}
+            ${{ github.ref }}
+            ${{ github.action }}
+            https://github.com/${{github.repository}} 
                  
