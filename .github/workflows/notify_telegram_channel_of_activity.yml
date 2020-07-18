@@ -22,9 +22,9 @@ ${{ secrets.TELEGRAM_USER }}
 ${{ github.event_name }}
 ${{ github.ref }}
 ${{ github.action }}
-${{ env }} 
-${{ job }} 
-${{ steps }} 
-${{ os }} 
+ # ${{ env }} 
+ # ${{ job }} 
+ # ${{ steps }} 
+ # ${{ os }} 
 https://github.com/${{github.repository}} 
                  
