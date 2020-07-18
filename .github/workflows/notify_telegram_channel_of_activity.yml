@@ -20,7 +20,7 @@ jobs:
           args: | 
             ${{ secrets.TELEGRAM_USER }} 
             ${{ github.event_name }}
-            ${{ github.ref }}
+            ${{ github.sha }}
             ${{ github.action }}
             https://github.com/${{github.repository}} 
                  
