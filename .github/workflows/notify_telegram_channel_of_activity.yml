@@ -19,8 +19,5 @@ jobs:
           format: markdown
           args: | 
             ${{ secrets.TELEGRAM_USER }} 
-            ${{ github.event_name }}
-            ![Notify `Full Stack Open 2020 Progress` channel of any pushes you made to master](https://github.com/tagraf/FullStackOpen/workflows/Notify%20%60Full%20Stack%20Open%202020%20Progress%60%20channel%20of%20any%20pushes%20you%20made%20to%20master/badge.svg?event=status)
-
             https://github.com/${{github.repository}} 
                  
