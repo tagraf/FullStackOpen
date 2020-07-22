@@ -6,4 +6,6 @@ Will update progress.
 Day 1 - Begin Part 0 - a & b  
 Day 2 - Still lingering on Part 0b  
 Day 3 - Arrived to Exercise P0.b_0.1-0.6 - (not in a mood to create diagram) 
+Day 4 - Reading Part 1 & read more sources on React (w3schools.com)
+Day 5 - Doing Exercies on Part 1
 
