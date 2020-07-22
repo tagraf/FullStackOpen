@@ -24,9 +24,9 @@ const Content = (props) => {
 
   return (
     <div>
-      <Part part='Fundamentals of React' exercises={10} />
-      <Part part='Using props to pass data' exercises={7} />
-      <Part part='State of a component' exercises={14} />
+      <Part part={part1} exercises={exercises1} />
+      <Part part={part2} exercises={exercises2} />
+      <Part part={part3} exercises={exercises3} />
     </div>
   )
 }
