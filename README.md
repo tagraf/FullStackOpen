@@ -1,6 +1,5 @@
-Taking some courses from this site:  https://fullstackopen.com/en/#course-contents  
-
-Will update progress.  
+# Taking courses and updaing progress as I go.
+https://fullstackopen.com/en/#course-contents  
 
 ###########################  
 Day 1 - Begin Part 0 - a & b  
