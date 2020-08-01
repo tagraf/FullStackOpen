@@ -2,40 +2,44 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
 const App = () => {
-  // save clicks of each button to own state
-  const [good, setGood] = useState(0)
-  const [neutral, setNeutral] = useState(0)
-  const [bad, setBad] = useState(0)
+  const [g, setGood] = useState(0)
+  const [n, setNeutral] = useState(0)
+  const [b, setBad] = useState(0)
+  const objRate = {
+    text: { g: "Good", n: "Neutral", b: "Bad", t: "Total", a: "Average", p: "Positive Feedback"},
+    value: { g: g, n: n, b: b, t: g+n+b, a: (g-b)/(g+n+b), p: ((g / (g+n+b))*100)+" %"},
+    event: { g: () => setGood(g + 1), n: () => setNeutral(n + 1), b: () => setBad(b + 1)}
+  }
 
-  if (good !== 0 && neutral !== 0 && bad !== 0)
   return (
     <div>
-    <h2>Give your feedback!</h2>
-    <button onClick={() => setGood(good + 1)}>Good</button>
-    <button onClick={() => setNeutral(neutral + 1)}>Neutral</button>
-    <button onClick={() => setBad(bad + 1)}>Bad</button>
-
-
-    <Stats good={good} neutral={neutral} bad={bad} total={good+neutral+bad} average={(good+neutral+bad)/3} posfeed={(good / (good+neutral+bad))*100} />
-    </div>
-  )
-  return (
-    <div>
-    <h2>Give your feedback!</h2>
-    <button onClick={() => setGood(good + 1)}>Good</button>
-    <button onClick={() => setNeutral(neutral + 1)}>Neutral</button>
-    <button onClick={() => setBad(bad + 1)}>Bad</button>
-
-    <h2> Statistical Results:</h2>
-    Collecting feedbacks...Psst...clicks all buttons
+    <UI objRate={objRate} />
+    <Stats objRate={objRate} />
     </div>
   )
 }
 
+const UI = (props) => {
+
+  return (
+  <div>
+    <h2>Give your feedback!</h2>
+    <button onClick={props.objRate.event.g}>{props.objRate.text.g}</button>
+    <button onClick={props.objRate.event.n}>{props.objRate.text.n}</button>
+    <button onClick={props.objRate.event.b}>{props.objRate.text.b}</button>
+  </div>
+  )
+}
+
+
 const Stats = (props) => {
+console.log("Stats: ",props.objRate.value.g)
+//if ({props.objRate.value.g}) !== 0 {
+//if ( {props.objRate.value.g} !== 0 ) && {props.objRate.value.n} !== 0 && {props.objRate.value.b} !== 0 ){
+if (1 !== 1) {
   return (
     <div>
-    <h2>Statistical Results:</h2>
+    <h2>Stats:</h2>
     <table>
       <tbody>
       <tr>
@@ -43,47 +47,46 @@ const Stats = (props) => {
         <th>Values</th>
       </tr>
       <tr>
-        <th bgcolor="black"></th>
-        <th bgcolor="black"></th>
+        <th>{props.objRate.text.g}</th>
+        <th>{props.objRate.value.g}</th>
       </tr>
       <tr>
-        <th>good</th>
-        <th>{props.good}</th>
+        <th>{props.objRate.text.n}</th>
+        <th>{props.objRate.value.n}</th>
       </tr>
       <tr>
-        <th>neutral</th>
-        <th>{props.neutral}</th>
+        <th>{props.objRate.text.b}</th>
+        <th>{props.objRate.value.b}</th>
       </tr>
       <tr>
-        <th>bad</th>
-        <th>{props.bad}</th>
+        <th>{props.objRate.text.t}</th>
+        <th>{props.objRate.value.t}</th>
       </tr>
       <tr>
-        <th bgcolor="black"></th>
-        <th bgcolor="black"></th>
+        <th>{props.objRate.text.a}</th>
+        <th>{props.objRate.value.a}</th>
       </tr>
       <tr>
-        <th>total</th>
-        <th>{props.total}</th>
-      </tr>
-      <tr>
-        <th>average</th>
-        <th>{props.average}</th>
-      </tr>
-      <tr>
-        <th>posfeed</th>
-        <th>{props.posfeed}%</th>
+        <th>{props.objRate.text.p}</th>
+        <th>{props.objRate.value.p}</th>
       </tr>
       </tbody>
     </table>
     </div>
   )
+  } else {
+    return(
+      <div>
+      <h2> Stats:</h2>
+      Collecting feedback...<br />Click all buttons to show results.
+      </div>
+    )
+  }
 }
 
 
 
 
-ReactDOM.render(<App />, 
+ReactDOM.render(<App />,
   document.getElementById('root')
 )
-
