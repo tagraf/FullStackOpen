@@ -33,10 +33,7 @@ const UI = (props) => {
 
 
 const Stats = (props) => {
-console.log("Stats: ",props.objRate.value.g)
-//if ({props.objRate.value.g}) !== 0) {
-//if ( {props.objRate.value.g} !== 0 ) && {props.objRate.value.n} !== 0 && {props.objRate.value.b} !== 0 ){
-if (1 !== 1) {
+if ( props.objRate.value.g !== 0 && props.objRate.value.n !== 0 && props.objRate.value.b !== 0 ){
   return (
     <div>
     <h2>Stats:</h2>
