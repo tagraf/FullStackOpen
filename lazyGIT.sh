@@ -1,5 +1,5 @@
 #!/bin/bash
-# Saves time to go through the routine
+# Saves time to go through the lazy routine
 
 if [ -z "$1" ]; then 
   echo ""

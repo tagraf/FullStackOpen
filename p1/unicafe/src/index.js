@@ -33,6 +33,7 @@ const UI = (props) => {
 
 
 const Stats = (props) => {
+
 if ( props.objRate.value.g !== 0 && props.objRate.value.n !== 0 && props.objRate.value.b !== 0 ){
   return (
     <div>
